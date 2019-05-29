@@ -1,1 +1,3 @@
 app-lp/
+.vscode/
+__pycache__/
