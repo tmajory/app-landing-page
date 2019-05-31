@@ -43,7 +43,7 @@ SECRET_KEY = '*jvw##szup=7tudj^(w)sy_xwuqs+&e-!vox*2zvbc(zbey#6*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dados-dualjunior.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['dualjunior.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
