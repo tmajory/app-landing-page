@@ -1,1 +1,1 @@
-web: gunicorn home.wsgi --log-file -
+web: gunicorn dados-dualjunior.wsgi --log-file -
