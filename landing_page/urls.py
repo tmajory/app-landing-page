@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import home
+from restrito.views import restrito
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('restrito/', restrito),
     path('', home),
 ]
