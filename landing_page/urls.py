@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from home.views import home
 from restrito.views import restrito
+from dados.views import dados
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('restrito/', restrito),
+    path('dados/', dados),
     path('', home),
 ]
