@@ -85,8 +85,10 @@
           <p class="text-white-50 mb-4">
             ...
           </p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#contact">Gostou?</a>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#contact">Não Gostou?</a>
+          <form action="/dados-votes/" method="post">
+            <input type='submit' class="btn btn-light btn-xl js-scroll-trigger" value='Gostou?' href="#contact"/>
+            <input type='submit' class="btn btn-light btn-xl js-scroll-trigger" value='Não Gostou?'  href="#contact">
+          </form>
         </div>
       </div>
     </div>
