@@ -86,6 +86,7 @@
             ...
           </p>
           <form action="/dados-votes/" method="post">
+            {% csrf_token %}
             <input type='submit' class="btn btn-light btn-xl js-scroll-trigger" value='Gostou?' href="#contact"/>
             <input type='submit' class="btn btn-light btn-xl js-scroll-trigger" value='Não Gostou?'  href="#contact">
           </form>
