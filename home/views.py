@@ -12,7 +12,7 @@ def home(request):
         "professores da UFC para trazer aos nossos clientes o melhor produto que ele "+
         "pode encontrar no mercado!",
     }
-    return render(request, 'home/home.html', html)
+    return render(request, 'home.html', html)
 
 def dados(request):
     html = {
@@ -25,4 +25,4 @@ def dados(request):
         'aboutTitle': "...",
         'aboutSubtitle': "...",
     }
-    return render(request, 'home/dados.html', html)
+    return render(request, 'dados.html', html)
