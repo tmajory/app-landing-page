@@ -41,6 +41,23 @@
             <p class="text-white-50 mb-4">
             {{ aboutSubtitle }}
             </p>
+            {% if respondido %}
+                <h2>Agradecemos pela sua sugestão! s2</h2>
+            {% else %}
+            <form action="/dados/submit/" method="POST">
+                {% csrf_token %}
+                <input type="radio" name="choice" value="yes" checked> Sim<br>
+                <input type="radio" name="choice" value="no" > Não<br>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="">
+
+                <label for="feedback">Deixe sua opinião:</label>
+                <textarea name="feedback" id="" cols="30" rows="10"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            {% endif %}
+            
+            
             <a class="btn btn-light btn-xl js-scroll-trigger" href="mailto:admfindualjr@gmail.com">Sugestão?</a>
         </div>
         </div>
