@@ -20,14 +20,14 @@ def home(request):
 
 def dados(request):
     html = {
-        'headTitle': "Dados - Dual Junior",
+        'headTitle': "Gestão de Dados - Dual Junior",
         'bodyTitle': "Uma ferramenta para lhe ajudar a poupar tempo",
         'bodySubtitle': "Já imaginou quanto tempo você gasta com trabalhos operacionais? "+
         "Imagina se você tivesse uma ferramenta que fizesse todo o serviço para você, e que "+
         "estivesse no seu compultador do escritórioe na palma de sua mão, totalmente "+
         "personalizavel e fácil de usar? Ela existe e você pode conhecê-lahoje!",
-        'aboutTitle': "Deu certo",
-        'aboutSubtitle': "Tais a ver como é facil...",
+        'aboutTitle': "Gestão de Dados",
+        'aboutSubtitle': "Em produção...",
         'respondido': request.COOKIES.get("respondido")
     }
     return render(request, 'dados.html', html)
