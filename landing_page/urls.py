@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import (
-    home, dados
+    home, dados, submit
 )
 from restrito.views import restrito
 
@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('restrito/', restrito),
     path('dados/', dados),
+    path('dados/submit/', submit),
     #path('dados-votes/', votes),
     path('', home),
 ]

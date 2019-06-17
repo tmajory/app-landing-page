@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from .models import PlusOne
+
 
 def home(request):
     html = {
@@ -22,7 +26,23 @@ def dados(request):
         "Imagina se você tivesse uma ferramenta que fizesse todo o serviço para você, e que "+
         "estivesse no seu compultador do escritórioe na palma de sua mão, totalmente "+
         "personalizavel e fácil de usar? Ela existe e você pode conhecê-lahoje!",
-        'aboutTitle': "...",
-        'aboutSubtitle': "...",
+        'aboutTitle': "Deu certo",
+        'aboutSubtitle': "Tais a ver como é facil...",
+        'respondido': request.COOKIES.get("respondido")
     }
     return render(request, 'dados.html', html)
+
+def submit(request):
+    
+    response = HttpResponseRedirect("/dados/#about")
+    print(request.POST)
+    choice_c = None
+    if ("yes" in request.POST['choice']):
+        choice_c = 'y'
+    else:
+        choice_c = 'n'
+
+    one = PlusOne(choice=choice_c, email=request.POST['email'], feedback=request.POST['feedback'])
+    one.save()
+    response.set_cookie("respondido", True)
+    return response
