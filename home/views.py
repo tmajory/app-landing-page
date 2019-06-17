@@ -36,13 +36,12 @@ def submit(request):
     
     response = HttpResponseRedirect("/dados/#about")
     print(request.POST)
-    choice_c = None
-    if ("yes" in request.POST['choice']):
-        choice_c = 'y'
-    else:
-        choice_c = 'n'
 
-    one = PlusOne(choice=choice_c, email=request.POST['email'], feedback=request.POST['feedback'])
+    one = PlusOne(
+        choice=request.POST['choice'], 
+        email=request.POST['email'], 
+        feedback=request.POST['feedback']
+    )
     one.save()
     response.set_cookie("respondido", True)
     return response
