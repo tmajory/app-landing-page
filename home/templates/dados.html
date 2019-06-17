@@ -35,31 +35,61 @@
 <section class="page-section bg-primary" id="about">
     <div class="container">
         <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-            <h2 class="text-white mt-0">{{ aboutTitle }}</h2>
-            <hr class="divider light my-4">
-            <p class="text-white-50 mb-4">
-            {{ aboutSubtitle }}
-            </p>
-            {% if respondido %}
-                <h2>Agradecemos pela sua sugestão! s2</h2>
-            {% else %}
-            <form action="/dados/submit/" method="POST">
-                {% csrf_token %}
-                <input type="radio" name="choice" value="yes" checked> Sim<br>
-                <input type="radio" name="choice" value="no" > Não<br>
-                <label for="email">E-mail:</label>
-                <input type="email" name="email" id="">
-
-                <label for="feedback">Deixe sua opinião:</label>
-                <textarea name="feedback" id="" cols="30" rows="10"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            {% endif %}
-            
-            
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="mailto:admfindualjr@gmail.com">Sugestão?</a>
-        </div>
+            <div class="col-lg-8 text-center">
+                <h2 class="text-white mt-0">{{ aboutTitle }}</h2>
+                <hr class="divider light my-4">
+                <p class="text-white-50 mb-4">
+                {{ aboutSubtitle }}
+                </p>
+                {% if respondido %}
+                    <h2 class="text-white mt-0">Agradecemos pela sua sugestão!</h2>
+                {% else %}
+                <form action="/dados/submit/" method="POST">
+                    {% csrf_token %}
+                    <!-- Formulário de Feedback -->
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label 
+                        text-white mt-0">Email</label>
+                        <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="feedback" class="col-sm-2 col-form-label 
+                        text-white mt-0">Opinião</label>
+                        <div class="col-sm-10">
+                        <textarea class="form-control" name="feedback" 
+                        placeholder="Deixe sua Opinião!"></textarea>
+                        </div>
+                    </div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0 
+                            text-white mt-0">Gostou?</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="choice" 
+                                    value="y" checked>
+                                    <label class="form-check-label text-white mt-0" 
+                                    for="gridRadios1"> Sim </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="choice" 
+                                    value="n" checked>
+                                    <label class="form-check-label text-white mt-0" 
+                                    for="gridRadios1"> Não </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-secondary">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
         </div>
     </div>
 </section>
