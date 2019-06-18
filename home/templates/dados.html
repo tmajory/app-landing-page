@@ -36,14 +36,51 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="text-white mt-0">{{ aboutTitle }}</h2>
+                <h2 class="text-white mt-0">O que é uma ERP?</h2>
                 <hr class="divider light my-4">
-                <p class="text-white-50 mb-4">
-                {{ aboutSubtitle }}
+                <p class="text-white-50 mb-4 text-justify">
+                    É um grande banco de dados com informações que interagem e se realimentam, ele é 
+                    um sistema que integra todos os dados e processos de uma empresa. Sendo capaz 
+                    de integrar todos os setores automatizando os processos internos.                        
                 </p>
+                <br>
+
+                <h2 class="text-white mt-0">Vantagens de uma ERP:</h2>
+                <hr class="divider light my-4">
+                <ul class="text-white-50 mb-4 text-justify">
+                    <li>Simplicidade nos processos operacionais da empresa;</li>
+                    <li>inteligência, segurança, eficiência e qualidade para as informações;</li>
+                    <li>Eliminar o uso de interfaces manuais;</li>
+                    <li>Reduzir o tempo dos processos gerenciais;</li>
+                    <li>Eliminar Redundância de atividades;</li>
+                    <li>Aumento da produtividade e redução da carga de trabalho.</li>                                              
+                </ul>
+                <br>
+
+                <h2 class="text-white mt-0">A Dual pode te ajudar!</h2>
+                <hr class="divider light my-4">
+                <p class="text-white-50 mb-4 text-justify">
+                    Temos a ferramenta ERP ideal para alavancar o crescimento da sua empresa, 
+                    auxiliando na organização e visualização dos dados, na centralização de 
+                    informações e na tomada de decisões.                  
+                </p>
+                <br>
+
+                <h2 class="text-white mt-0">Vantagens da nossa ERP:</h2>
+                <hr class="divider light my-4">
+                <ul class="text-white-50 mb-4 text-justify">
+                    <li>Abaixo do preço do mercado e compra única;</li>
+                    <li>Responsividade, acessível a todos os seus dispositivos;</li>
+                    <li>Totalmente personalizável para seu negócio;</li>
+                    <li>Previsões do crescimento do  seu negócio;</li>                                           
+                </ul>
+                <br><br>
+
                 {% if respondido %}
                     <h2 class="text-white mt-0">Agradecemos pela sua sugestão!</h2>
                 {% else %}
+                <h2 class="text-white mt-0">Deixe sua opinião sobre nosso serviço</h2>
+                <br>
                 <form action="/dados/submit/" method="POST">
                     {% csrf_token %}
                     <!-- Formulário de Feedback -->

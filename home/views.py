@@ -22,18 +22,17 @@ def dados(request):
     html = {
         'headTitle': "Gestão de Dados - Dual Junior",
         'bodyTitle': "Uma ferramenta para lhe ajudar a poupar tempo",
-        'bodySubtitle': "Já imaginou quanto tempo você gasta com trabalhos operacionais? "+
-        "Imagina se você tivesse uma ferramenta que fizesse todo o serviço para você, e que "+
-        "estivesse no seu compultador do escritórioe na palma de sua mão, totalmente "+
-        "personalizavel e fácil de usar? Ela existe e você pode conhecê-lahoje!",
-        'aboutTitle': "Gestão de Dados",
-        'aboutSubtitle': "Em produção...",
+        'bodySubtitle': "Acesse seus dados de maneira mais rápida sem uso de planilhas "+
+        "e papéis que gastam seu tempo na hora de tomar suas decisões e utilize agora uma"+
+        " ferramenta ERP (Planejamento de Recursos Empresariais) para solucionar seus problemas."+
+        " Garanta de forma segura e automatizada a integração e realimentação do seu banco de dados"+
+        " com uma única ferramenta acessível e personalizável, dando previsões para alavancar seu "+
+        "crescimento!!",
         'respondido': request.COOKIES.get("respondido")
     }
     return render(request, 'dados.html', html)
 
 def submit(request):
-    
     response = HttpResponseRedirect("/dados/#about")
     print(request.POST)
 
