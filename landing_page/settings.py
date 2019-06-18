@@ -39,6 +39,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '*jvw##szup=7tudj^(w)sy_xwuqs+&e-!vox*2zvbc(zbey#6*'
+SECRET_KEY_DB = os.getenv('SECRET_KEY_DB', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -96,8 +97,12 @@ WSGI_APPLICATION = 'landing_page.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'daampu43lkvu9l',
+        'USER': 'bwiknxbowzldcn',
+        'PASSWORD': 'mypassword',
+        'HOST': 'ec2-54-225-72-238.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
