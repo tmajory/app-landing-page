@@ -1,4 +1,5 @@
 app-lp/
 .vscode/
 __pycache__/
-security_keys.txt.env
+security_keys.txt
+.env
